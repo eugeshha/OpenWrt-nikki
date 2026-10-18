@@ -1,3 +1,8 @@
+> **Fork by eugeshha.** Adds an optional per-subscription `hwid` option (sends `x-hwid`, `x-device-os`, `x-ver-os`, `x-device-model`) for panels with a device limit such as Remnawave.
+> Packages are built by the `fork-release` workflow for `aarch64_cortex-a53` (OpenWrt 24.10 / 25.12) and published to the feed at https://eugeshha.github.io/OpenWrt-nikki.
+> Install: `wget -O - https://github.com/eugeshha/OpenWrt-nikki/raw/refs/heads/main/feed.sh | ash`, then install `nikki luci-app-nikki luci-i18n-nikki-ru`.
+> Sync with upstream: `git fetch upstream && git merge upstream/main`, then run `fork-release`.
+
 ![GitHub License](https://img.shields.io/github/license/nikkinikki-org/OpenWrt-nikki?style=for-the-badge&logo=github) ![GitHub Tag](https://img.shields.io/github/v/release/nikkinikki-org/OpenWrt-nikki?style=for-the-badge&logo=github) ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/nikkinikki-org/OpenWrt-nikki/total?style=for-the-badge&logo=github) ![GitHub Repo stars](https://img.shields.io/github/stars/nikkinikki-org/OpenWrt-nikki?style=for-the-badge&logo=github) [![Telegram](https://img.shields.io/badge/Telegram-gray?style=for-the-badge&logo=telegram)](https://t.me/nikkinikki_org)
 
 English | [中文](README.zh.md)
