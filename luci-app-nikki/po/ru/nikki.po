@@ -500,6 +500,10 @@ msgstr "Группа"
 msgid "HTTP Port"
 msgstr "Порт HTTP"
 
+#: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/profile.js:81
+msgid "HWID"
+msgstr "HWID"
+
 #: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/app.js:155
 msgid "Heap Size Hard Limit"
 msgstr "Жёсткий лимит размера кучи"
@@ -852,6 +856,10 @@ msgstr "Cron-выражение"
 #: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/log.js:114
 msgid "Scroll To Bottom"
 msgstr "Прокрутить вниз"
+
+#: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/profile.js:82
+msgid "Sent as x-hwid header with device info. Required by panels with a device limit, such as Remnawave. Leave empty to disable."
+msgstr "Передаётся в заголовке x-hwid вместе с данными устройства. Нужен панелям с лимитом устройств, например Remnawave. Оставьте пустым, чтобы не отправлять."
 
 #: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/app.js:200
 msgid "Skip System IPv6 Check"

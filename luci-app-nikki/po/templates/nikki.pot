@@ -493,6 +493,10 @@ msgstr ""
 msgid "HTTP Port"
 msgstr ""
 
+#: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/profile.js:81
+msgid "HWID"
+msgstr ""
+
 #: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/app.js:155
 msgid "Heap Size Hard Limit"
 msgstr ""
@@ -844,6 +848,10 @@ msgstr ""
 #: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/log.js:81
 #: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/log.js:114
 msgid "Scroll To Bottom"
+msgstr ""
+
+#: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/profile.js:82
+msgid "Sent as x-hwid header with device info. Required by panels with a device limit, such as Remnawave. Leave empty to disable."
 msgstr ""
 
 #: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/app.js:200

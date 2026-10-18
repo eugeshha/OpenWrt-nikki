@@ -78,6 +78,11 @@ return view.extend({
         o.value('clash.meta');
         o.value('mihomo');
 
+        o = s.option(form.Value, 'hwid', _('HWID'));
+        o.description = _('Sent as x-hwid header with device info. Required by panels with a device limit, such as Remnawave. Leave empty to disable.');
+        o.modalonly = true;
+        o.optional = true;
+
         o = s.option(form.ListValue, 'prefer', _('Prefer'));
         o.default = 'remote';
         o.modalonly = true;

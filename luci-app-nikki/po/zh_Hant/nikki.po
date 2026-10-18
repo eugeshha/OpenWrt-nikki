@@ -500,6 +500,10 @@ msgstr "使用者群組"
 msgid "HTTP Port"
 msgstr "HTTP 埠"
 
+#: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/profile.js:81
+msgid "HWID"
+msgstr "HWID"
+
 #: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/app.js:155
 msgid "Heap Size Hard Limit"
 msgstr "堆積大小硬限制"
@@ -852,6 +856,10 @@ msgstr "Cron 表達式"
 #: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/log.js:114
 msgid "Scroll To Bottom"
 msgstr "捲動到底部"
+
+#: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/profile.js:82
+msgid "Sent as x-hwid header with device info. Required by panels with a device limit, such as Remnawave. Leave empty to disable."
+msgstr "作為 x-hwid 請求標頭與裝置資訊一起傳送。裝置數量受限的面板（如 Remnawave）需要此項。留空則不傳送。"
 
 #: applications/luci-app-nikki/htdocs/luci-static/resources/view/nikki/app.js:200
 msgid "Skip System IPv6 Check"
