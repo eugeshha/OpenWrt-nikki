@@ -60,6 +60,7 @@ define Package/mihomo-meta/install
 		wget -q -O $(UPX_DIR).tar.xz https://github.com/upx/upx/releases/download/v$(UPX_VERSION)/upx-$(UPX_VERSION)-amd64_linux.tar.xz && \
 		echo "$(UPX_HASH)  $(UPX_DIR).tar.xz" | sha256sum -c - && \
 		tar -xJf $(UPX_DIR).tar.xz -C $(UPX_DIR) --strip-components=1; }
+	$(TARGET_CROSS)strip --strip-all $(1)/usr/libexec/mihomo
 	$(UPX_DIR)/upx -q --lzma $(1)/usr/libexec/mihomo
 endef
 
@@ -68,7 +69,7 @@ define Build/Prepare
 	$(RM) -r $(PKG_BUILD_DIR)/rules/logic_test
 endef
 
-# fork: Go already strips the binary; rstrip would damage the UPX-packed file
+# fork: the binary is stripped above before UPX; rstrip would damage the packed file
 RSTRIP:=:
 
 $(eval $(call GoBinPackage,mihomo-meta))
