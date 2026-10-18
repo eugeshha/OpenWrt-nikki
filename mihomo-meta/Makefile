@@ -50,11 +50,16 @@ endef
 
 # fork: compress the core with UPX (58 MB -> ~14 MB) so it fits small flash
 UPX_VERSION:=5.0.2
+UPX_HASH:=ddc2654063fe4dc80d95b420788494e4db078ebb01a650692d623b5a9906e61e
 UPX_DIR:=$(STAGING_DIR_HOST)/upx-$(UPX_VERSION)
 
 define Package/mihomo-meta/install
 	$(call GoPackage/Package/Install/Bin,$(1))
-	[ -x $(UPX_DIR)/upx ] || { mkdir -p $(UPX_DIR) && wget -q -O - https://github.com/upx/upx/releases/download/v$(UPX_VERSION)/upx-$(UPX_VERSION)-amd64_linux.tar.xz | tar -xJ -C $(UPX_DIR) --strip-components=1; }
+	[ -x $(UPX_DIR)/upx ] || { \
+		mkdir -p $(UPX_DIR) && \
+		wget -q -O $(UPX_DIR).tar.xz https://github.com/upx/upx/releases/download/v$(UPX_VERSION)/upx-$(UPX_VERSION)-amd64_linux.tar.xz && \
+		echo "$(UPX_HASH)  $(UPX_DIR).tar.xz" | sha256sum -c - && \
+		tar -xJf $(UPX_DIR).tar.xz -C $(UPX_DIR) --strip-components=1; }
 	$(UPX_DIR)/upx -q --lzma $(1)/usr/libexec/mihomo
 endef
 
