@@ -48,14 +48,23 @@ define Package/mihomo-meta/description
   A rule based proxy in Go.
 endef
 
+# fork: compress the core with UPX (58 MB -> ~14 MB) so it fits small flash
+UPX_VERSION:=5.0.2
+UPX_DIR:=$(STAGING_DIR_HOST)/upx-$(UPX_VERSION)
+
 define Package/mihomo-meta/install
 	$(call GoPackage/Package/Install/Bin,$(1))
+	[ -x $(UPX_DIR)/upx ] || { mkdir -p $(UPX_DIR) && wget -q -O - https://github.com/upx/upx/releases/download/v$(UPX_VERSION)/upx-$(UPX_VERSION)-amd64_linux.tar.xz | tar -xJ -C $(UPX_DIR) --strip-components=1; }
+	$(UPX_DIR)/upx -q --lzma $(1)/usr/libexec/mihomo
 endef
 
 define Build/Prepare
 	$(Build/Prepare/Default)
 	$(RM) -r $(PKG_BUILD_DIR)/rules/logic_test
 endef
+
+# fork: Go already strips the binary; rstrip would damage the UPX-packed file
+RSTRIP:=:
 
 $(eval $(call GoBinPackage,mihomo-meta))
 $(eval $(call BuildPackage,mihomo-meta))
